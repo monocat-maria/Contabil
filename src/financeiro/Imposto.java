@@ -22,6 +22,10 @@ public class Imposto extends Pagamento implements Calculo{
         this.imposto = imposto;
     }
 
+    public Imposto() {
+        
+    }
+    
     public double getDebito() {
         return debito;
     }
@@ -88,11 +92,13 @@ public class Imposto extends Pagamento implements Calculo{
 
     @Override
     public double calcularImposto(double debito, double credito, double pis) {
+        pis = this.debito - this.credito * 0.00165;
         return pis;
     }
 
     @Override
     public double calcularImposto(double valor_produto, double frete, double seguro, double despesas, double aliquota, double ipi) {
+        ipi = (this.valor_produto + this.frete + this.seguro + this.despesas) * (this.aliquota/100);
         return ipi;
     }
     
