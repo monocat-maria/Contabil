@@ -92,7 +92,7 @@ public class Imposto extends Pagamento implements Calculo{
 
     @Override
     public double calcularImposto(double debito, double credito, double pis) {
-        pis = (this.debito - this.credito) * 0.00165;
+        pis = (this.debito - this.credito) * 0.0165;
         return pis;
     }
 
