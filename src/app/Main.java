@@ -17,6 +17,8 @@ public class Main {
             Imposto imposto = new Imposto();
             
             System.out.println("\t--Pagamento de Impostos--");
+            System.out.println("Informe o nome da empresa:");
+            imposto.setEmpresa(input.next());
             System.out.println("Informe o tipo de imposto: P - PIS / I - IPI");
             opcao = input.next().charAt(0);
             
@@ -30,7 +32,7 @@ public class Main {
                 case 'P','p':
                     System.out.println("Insira o valor do débito:");
                     imposto.setDebito(input.nextDouble());
-                    System.out.println("Insira o valor do crédito");
+                    System.out.println("Insira o valor do crédito:");
                     imposto.setCredito(input.nextDouble());
                     
                     impostoPago.adicionarNaLista(imposto);
